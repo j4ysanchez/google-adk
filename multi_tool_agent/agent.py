@@ -58,10 +58,29 @@ def get_current_time(city: str) -> dict:
     return {"status": "success", "report": report}
 
 
+# root_agent = Agent(
+#     name="weather_time_agent",
+#     # model="ollama_chat/llama3.1",
+#     model=LiteLlm(model="ollama_chat/llama3.1"),
+#     description=(
+#         "Agent to answer questions about the time and weather in a city."
+#     ),
+#     instruction=(
+#         "You are a helpful agent who can answer user questions about the time and weather in a city."
+#     ),
+#     tools=[get_weather, get_current_time],
+# )
+
+# litellm.register_model(model_cost={
+#                 "ollama_chat/gemma3": { 
+#                   "supports_function_calling": true
+#                 },
+#             })
+
 root_agent = Agent(
     name="weather_time_agent",
     # model="ollama_chat/llama3.1",
-    model=LiteLlm(model="ollama_chat/llama3.1"),
+    model=LiteLlm(model="ollama_chat/mistral"),
     description=(
         "Agent to answer questions about the time and weather in a city."
     ),
