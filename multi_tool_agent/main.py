@@ -94,11 +94,11 @@ print(get_weather("Paris"))
 # @title Define the Weather Agent
 # Use one of the model constants defined earlier
 # AGENT_MODEL = MODEL_GEMINI_2_0_FLASH # Starting with Gemini
-AGENT_MODEL = "ollama_chat/mistral" 
+AGENT_MODEL = "ollama_chat/llama3.1" 
 
 weather_agent = Agent(
     name="weather_agent_v1",
-    model=LiteLlm(model="ollama_chat/mistral"),
+    model=LiteLlm(model=AGENT_MODEL),
     description="Provides weather information for specific cities.",
     instruction="You are a helpful weather assistant. "
                 "When the user asks for the weather in a specific city, "
